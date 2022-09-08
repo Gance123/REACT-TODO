@@ -56,9 +56,14 @@ export const App = () => {
         todoText={todoText}
         onChange={onChangeTodoText}
         onClick={onClickAdd}
+        TrueorFalse={imcompleteTodos.length >= 5}
+        //imcompleteTodos.length >= 5の演算結果がtrue/falseになることを利用する
+        //・・・比較演算子でtrue/false判定
       />
 
-      <p style={{ color: "red" }}>※登録できるtodo5個までです。</p>
+      {imcompleteTodos.length >= 5 && (
+        <p style={{ color: "red" }}>※登録できるtodo5個までです。</p>
+      )}
 
       <ImcompleteList
         todos={imcompleteTodos}
