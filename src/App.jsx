@@ -4,12 +4,9 @@ import "./styles.css";
 export const App = () => {
   const [todoText, setTodoText] = useState("");
 
-  const [imcompleteTodos, setImcompleteTodos] = useState([
-    "あいうえお",
-    "かきくけこ"
-  ]);
+  const [imcompleteTodos, setImcompleteTodos] = useState([]);
 
-  const [completeTodos, setcompleteTodos] = useState(["さしすせそ"]);
+  const [completeTodos, setcompleteTodos] = useState([]);
 
   //inputのvalueがテキスト内容を意味する・・・初期値todotext
   //そのテキスト内容をsetTodoTextで書き換えができるようにする
@@ -45,7 +42,6 @@ export const App = () => {
   };
 
   const onClickBack = (index) => {
-    console.log(index);
     const CompleteTodos = [...completeTodos];
     const BackTodos = CompleteTodos.splice(index, 1); //削除対象・・・comleteTodos[index]
     const newImcompleteTodos = [...imcompleteTodos, BackTodos];
