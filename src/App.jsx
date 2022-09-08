@@ -38,18 +38,18 @@ export const App = () => {
 
   const onClickComplete = (index) => {
     const newTodos = [...imcompleteTodos];
-    const newDeleteTodos = newTodos.splice(index, 1);
+    const DeleteTodos = newTodos.splice(index, 1); //削除対象・・・imcomleteTodos[index]
+    const newCompleteTodos = [...completeTodos, DeleteTodos];
     setImcompleteTodos(newTodos);
-    const newCompleteTodos = [...completeTodos, newDeleteTodos];
     setcompleteTodos(newCompleteTodos);
   };
 
   const onClickBack = (index) => {
     console.log(index);
     const CompleteTodos = [...completeTodos];
-    const newCompleteTodos = CompleteTodos.splice(index, 1);
+    const BackTodos = CompleteTodos.splice(index, 1); //削除対象・・・comleteTodos[index]
+    const newImcompleteTodos = [...imcompleteTodos, BackTodos];
     setcompleteTodos(CompleteTodos);
-    const newImcompleteTodos = [...imcompleteTodos, newCompleteTodos];
     setImcompleteTodos(newImcompleteTodos);
   };
 
